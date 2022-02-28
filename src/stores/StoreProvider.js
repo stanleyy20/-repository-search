@@ -11,25 +11,31 @@ const StoreProvider = ({ children }) => {
 
   const getRepos = () => {
     const API = `https://api.github.com/search/repositories?q=${inputValue}`;
-    fetch(API)
-      .then((response) => {
-        if (response.ok) {
-          return response;
-        }
-        throw Error('Nie udało się wczytać danych');
-      })
-      .then((response) => response.json())
-      .then((data) => {
-        setRespoName(inputValue);
-        setError(false);
-        setInputValue('');
-        setData(data.items);
-        setTotalCount(data.total_count);
-      })
-      .catch((error) => {
-        console.log(error);
-        setError(true);
-      });
+
+    if (inputValue === '') {
+      alert('Wpisz nazwę szukanego repozytorium');
+      return;
+    } else {
+      fetch(API)
+        .then((response) => {
+          if (response.ok) {
+            return response;
+          }
+          throw Error('Nie udało się wczytać danych');
+        })
+        .then((response) => response.json())
+        .then((data) => {
+          setRespoName(inputValue);
+          setError(false);
+          setInputValue('');
+          setData(data.items);
+          setTotalCount(data.total_count);
+        })
+        .catch((error) => {
+          console.log(error);
+          setError(true);
+        });
+    }
   };
 
   return (
