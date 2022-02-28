@@ -22,7 +22,7 @@ const Form = () => {
   return (
     <form className={style()}>
       <input type='text' value={inputValue} onChange={handleOnChange} placeholder='Wpisz nazwę repozytorium' />
-      <button onClick={handleOnClick}>Wyszukaj</button>
+      <button onClick={handleOnClick}>Szukaj</button>
     </form>
   );
 };
