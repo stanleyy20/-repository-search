@@ -4,8 +4,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 # Build Setup
 
-npx create-react-app my-app
-
 npm install
 
 npm start
