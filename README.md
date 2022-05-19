@@ -6,9 +6,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 npx create-react-app my-app
 
-npm start
+npm install
 
-npm run build
+npm start
 
 # Description
 
